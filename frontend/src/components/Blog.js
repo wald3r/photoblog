@@ -1,26 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table } from 'react-bootstrap'
 import '../index.css';
 import PhotoGallery from './PhotoGallery'
+import blogService from '../services/blogService'
 
 const Blog = () => {
 
-    const [entries, setEntries] = useState([
+    useEffect(() => {
+        setEntries(blogService.getBlogEntries())
+    }, [])
 
-        {
-            id: "1",
-            link: "http://asdfasdf",
-            text: "whatever",
-            date: "12.12.2012"
-        },
-        {
-            id: "2",
-            link: "http://asdfasdf",
-            text: "test",
-            date: "44.12.2012"
-        }
-    
-    ])
+
+
+    const [entries, setEntries] = useState()
     
 
     return (

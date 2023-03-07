@@ -6,9 +6,7 @@ const photoSchema = mongoose.Schema({
     caption: String,
     width: Number,
     height: Number,
-    date: Date,
-    blog: String
-
+    date: Date
 })
 
 module.exports = mongoose.model('Photo', photoSchema)

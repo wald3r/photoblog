@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyparser = require('body-parser')
-const photoRouter = require('./controllers/photoController')
+const blogRouter = require('./controllers/blogController')
 const cors = require('cors')
 require('dotenv').config()
 
@@ -17,6 +17,6 @@ mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 app.use(express.static('build'))
 app.use(cors())
 app.use(bodyparser.json())
-app.use('/api/photos', photoRouter)
+app.use('/api/blogs', blogRouter)
 
 module.exports = app
