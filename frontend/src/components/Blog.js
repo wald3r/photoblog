@@ -7,13 +7,15 @@ import blogService from '../services/blogService'
 const Blog = () => {
 
     useEffect(() => {
-        setEntries(blogService.getBlogEntries())
+        getBlogEntries()
     }, [])
 
-
-
-    const [entries, setEntries] = useState()
+    const [entries, setEntries] = useState([])
     
+    const getBlogEntries = async () => {
+        console.log(blogService.getBlogEntries())
+        setEntries(await blogService.getBlogEntries())
+    }
 
     return (
         <div className="container">

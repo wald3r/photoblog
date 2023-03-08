@@ -7,8 +7,8 @@ const blogSchema = mongoose.Schema({
     date: Date,
     photos: [
         { 
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Photo' 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Photo' 
         }
     ]
 
